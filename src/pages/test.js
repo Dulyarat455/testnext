@@ -36,29 +36,17 @@ export default function Home() {
     };
 
     const uploadImage = () =>{
-      const res = fetch("/api/sentimage", {
+      const res = fetch("https://e236-49-237-43-95.ngrok-free.app", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(info),
+        body: JSON.stringify({test:base64}),
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.success) {
-            console.log(data.success);
-
-            setMessage(data.message);
-            setMessagestatus(true);
-
-            setTimeout(() => {
-              router.push("/workspace_dailyexpense");
-            }, 1000);
-          } else {
-            console.log(data);
-            setMessage(data.message);
-            setMessagestatus(false);
-          }
+       
+          console.log(data);
         });
 
     }
