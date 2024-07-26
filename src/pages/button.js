@@ -29,7 +29,7 @@ export default function ButtonPage() {
 return(
     <div>
         <h1>Button Page</h1>
-        <h1>{status}</h1>
+        <h2>{status}</h2>
 
     </div>
 )
